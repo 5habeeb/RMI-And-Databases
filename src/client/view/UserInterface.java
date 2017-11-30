@@ -14,7 +14,7 @@ public class UserInterface {
 
     void run () {
         try {
-            server.createAccount("Louis", "1234");
+            System.out.println(server.testMethod("Louis"));
         } catch (RemoteException e) {
             e.printStackTrace();
         }

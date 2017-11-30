@@ -7,6 +7,8 @@ import java.rmi.RemoteException;
 
 public interface CatalogueServer extends Remote{
 
+    public String testMethod (String word) throws RemoteException;
+
     public void createAccount (String name , String password) throws RemoteException;
 
     public void deleteAccount () throws RemoteException;
