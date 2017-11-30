@@ -15,7 +15,7 @@ public interface CatalogueServer extends Remote{
 
     public void logout () throws RemoteException;
 
-    public List<Account> listFiles () throws RemoteException;
+   // public List<Account> listFiles () throws RemoteException;
 
     public boolean status() throws  RemoteException;
 
