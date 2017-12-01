@@ -1,9 +1,11 @@
 package server.controller;
 
+import common.CatalogueClient;
 import common.CatalogueServer;
 
 import java.rmi.*;
 import java.rmi.server.UnicastRemoteObject;
+import java.util.List;
 
 public class Controller extends UnicastRemoteObject implements CatalogueServer {
 
@@ -12,12 +14,8 @@ public class Controller extends UnicastRemoteObject implements CatalogueServer {
     }
 
     @Override
-    public String testMethod(String word) throws RemoteException {
-        return word + " hello";
-    }
-
-    @Override
     public void createAccount(String name, String password) throws RemoteException {
+        System.out.println(name + " , " + password);
     }
 
     @Override
@@ -26,13 +24,18 @@ public class Controller extends UnicastRemoteObject implements CatalogueServer {
     }
 
     @Override
-    public void login(String name, String password) throws RemoteException {
-
+    public void login(CatalogueClient remoteClient, String name, String password) throws RemoteException {
+        remoteClient.receiveMessage("Your a bitch");
     }
 
     @Override
     public void logout() throws RemoteException {
 
+    }
+
+    @Override
+    public List<String> listFiles() throws RemoteException {
+        return null;
     }
 
     @Override
